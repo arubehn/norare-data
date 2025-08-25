@@ -1,0 +1,54 @@
+{
+    "@context": [
+        "http://www.w3.org/ns/csvw",
+        {
+            "@language": "en"
+        }
+    ],
+    "dialect": {
+        "encoding": "utf-8-sig",
+        "delimiter": "\t",
+        "skipBlankRows": true
+    },
+    "tables": [
+        {
+            "tableSchema": {
+                "columns": [
+                    {
+                        "datatype": {
+                            "base": "integer",
+                            "minimum": 1
+                        },
+                        "name": "CONCEPTICON_ID"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "CONCEPTICON_GLOSS"
+                    },
+                    {
+                        "datatype": "string",
+                        "name": "SPANISH"
+                    },
+                    {
+                        "datatype": "json",
+                        "name": "R1"
+                    },
+                    {
+                      "name": "R123",
+                      "datatype": "json"
+                    }
+                ],
+                "foreignKeys": [
+                  {
+                    "columnReference": "CONCEPTICON_ID",
+                    "reference": {
+                      "resource": "../concepticon.tsv",
+                      "columnReference": "ID"
+                    }
+                  }
+                ]
+            },
+            "url": "Cabana-2024-SWOWRP.tsv"
+        }
+    ]
+}
